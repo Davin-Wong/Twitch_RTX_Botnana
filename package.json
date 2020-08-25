@@ -1,0 +1,25 @@
+{
+  "name": "rtx_botnana",
+  "version": "1.0.0",
+  "description": "A Personalized Twitch Chat Bot",
+  "main": "src",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RTX-Banana/Twitch_RTX_Botnana.git"
+  },
+  "author": "Davin Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RTX-Banana/Twitch_RTX_Botnana/issues"
+  },
+  "homepage": "https://github.com/RTX-Banana/Twitch_RTX_Botnana#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "tmi.js": "^1.5.0"
+  }
+}
