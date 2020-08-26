@@ -72,8 +72,8 @@ function onMessageHandler (target, context, msg, self) {
 	}
 
 	if (commandName == '!innocent_fear') {
-		client.say(target, `Innocent Fear isn't that great? Well you're probably right. I may have mechanics 
-			and decent game knowledge, but in terms of macro, I'm pretty bad.`);
+		client.say(target, `Innocent Fear isn't that great? Well you're probably right. He may have mechanics 
+			and decent game knowledge, but in terms of macro, he isn't pretty the best.`);
 		console.log(`* Executed ${commandName} command`);
 	}
 	/* For when I change twitch IGN
