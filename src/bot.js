@@ -3,6 +3,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+var bdoCommands = ["!bdomoney", " !gear"];
+var leagueCommands = ["!opgg", " !rank"];
+var commands = ["!discord", " !twitter", " !innocent_fear", " !pcbuild", " !playlist"];
+
+
 const client = new tmi.Client({
 	options: { debug: true },
 	connection: {
@@ -55,7 +60,7 @@ function onMessageHandler (target, context, msg, self) {
 		console.log(`* Executed ${commandName} command`);
 	}
 
-    //Social Commands
+    //Social and QoL Commands
     if (commandName == '!discord') {
 		client.say(target, `Join my discord for updates of when I go live! https://discord.gg/RSj8dK8`);
 		console.log(`* Executed ${commandName} command`);
@@ -66,7 +71,6 @@ function onMessageHandler (target, context, msg, self) {
 		console.log(`* Executed ${commandName} command`);
 	}
 
-	//QoL Commands
 	if (commandName == '!innocent_fear') {
 		client.say(target, `Innocent Fear isn't that great? Well you're probably right. I may have mechanics 
 			and decent game knowledge, but in terms of macro, I'm pretty bad.`);
@@ -79,6 +83,12 @@ function onMessageHandler (target, context, msg, self) {
 	 *		console.log(`* Executed ${commandName} command`);
 	 *	}
 	 */
+
+	if (commandName == '!pcbuild') {
+		client.say(target, 'pcpartpicker.com/list/gwn9XP');
+		console.log(`* Executed ${commandName} command`);
+	}
+
 	if (commandName == '!playlist') {
 		client.say(target, `Here is the playlist I usually use. My friend ryfy, aka cosiini, made it, so all 
 			credit goes to him. https://open.spotify.com/playlist/6765iHhaesExkC36HjzNdR?si=cZ9IcKJkTAWWRX4pC1oimA`);
@@ -86,7 +96,9 @@ function onMessageHandler (target, context, msg, self) {
 	}
 
 	if (commandName == '!help') {
-		client.say(target, `HAHA I DIDNT IMPLEMENT THIS YET!`);
+		client.say(target, `Bdo Specific Commands: ${bdoCommands}`);
+		client.say(target, `League Specific Commands: ${leagueCommands}`);
+		client.say(target, `Other Commands: ${commands}`);
 		console.log(`* Executed ${commandName} command`);
 	}
 }
@@ -96,6 +108,11 @@ function onConnectedHandler (addr, port) {
 }
 
 //Functions that execute on interval
+function autoHelp() {
+	client.say('#innocent_fear', `Type !help to see the commands available to this bot`);
+	console.log(`* Executed auto help command`);
+}
+
 function discordPlug() {
 	client.say('#innocent_fear', `Join my discord for updates of when I go live! https://discord.gg/RSj8dK8`);
 	console.log(`* Executed discord command`);
@@ -107,6 +124,6 @@ function innocentfearCommandAuto() {
 	console.log(`* Executed innocentfear command`);
 }
 
+setInterval(autoHelp, 300000);
 setInterval(discordPlug, 900000);
-
 setInterval(innocentfearCommandAuto, 1200000);
