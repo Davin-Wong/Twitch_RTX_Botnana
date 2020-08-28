@@ -90,7 +90,7 @@ function onMessageHandler (target, context, msg, self) {
 	}
 
 	if (commandName == '!playlist') {
-		client.say(target, `Here is the playlist I usually use. My friend ryfy, aka cosiini, made it, so all 
+		client.say(target, `Here is the playlist I usually use. My friend cosini, made it, so all 
 			credit goes to him. https://open.spotify.com/playlist/6765iHhaesExkC36HjzNdR?si=cZ9IcKJkTAWWRX4pC1oimA`);
 		console.log(`* Executed ${commandName} command`);
 	}
