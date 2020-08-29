@@ -96,7 +96,9 @@ function onMessageHandler (target, context, msg, self) {
 	}
 
 	if (commandName == '!help') {
-		client.say(target, `Bdo Specific Commands: ${bdoCommands} \| League Specific Commands: ${leagueCommands} \| Other Commands: ${commands}`);
+		client.say(target, `Bdo Specific Commands: ${bdoCommands}`);
+		client.say(target, `League Specific Commands: ${leagueCommands}`);
+		client.say(target, `Other Commands: ${commands}`);
 		console.log(`* Executed ${commandName} command`);
 	}
 }
